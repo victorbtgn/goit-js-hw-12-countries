@@ -5,6 +5,8 @@ html {
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
@@ -13,8 +15,34 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-  /*
-   * CSS image reference example.
-   */
-  background-image: url('./images/bg-pattern.png');
+  /* background: linear-gradient(#f8f6859c, #f7dc56e8); */
+}
+
+.intro {
+  height: 100vh;
+  background: linear-gradient(#f8f68523, #f7dc569f),
+    url('./images/country.png') no-repeat center;
+  background-size: 60%;
+}
+
+h1 {
+  padding-top: 100px;
+  margin-bottom: 50px;
+  color: #4b41118f;
+  font-size: 50px;
+  text-align: center;
+}
+
+.country {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: 50px;
+  border-style: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f1b06ee;
+  outline: none;
 }
