@@ -9,6 +9,8 @@ PNotify.defaults.styling = 'material';
 PNotify.defaults.icons = 'material';
 
 const addMarkup = arr => {
+  searchRefs.list.innerHTML = '';
+
   if (arr.length === 1) {
     const markup = oneCountryTemplate(arr[0]);
 
