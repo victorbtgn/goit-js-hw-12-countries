@@ -7,16 +7,21 @@ import PNotify from './pnotify';
 const addMarkup = arr => {
   searchRefs.list.innerHTML = '';
 
-  if (arr.length === 1) {
-    const markup = oneCountryTemplate(arr[0]);
+  if (arr.status === 404) {
+    PNotify.error({
+      text: 'Ups, this country not found, try again.',
+    });
+    return;
+  }
 
-    searchRefs.list.insertAdjacentHTML('beforeend', markup);
+  if (arr.length === 1) {
+    searchRefs.list.innerHTML = oneCountryTemplate(arr[0]);
   }
 
   if (arr.length > 1 && arr.length <= 10) {
     const markup = arr.reduce((acc, item) => {
-      const listPoint = tenCountryTemplate(item);
-      acc += listPoint;
+      const listItem = tenCountryTemplate(item);
+      acc += listItem;
       return acc;
     }, '');
 
@@ -24,7 +29,7 @@ const addMarkup = arr => {
   }
 
   if (arr.length > 10) {
-    PNotify.error({
+    PNotify.notice({
       title: 'Too many matches found.',
       text: 'Enter a more specific query!',
     });

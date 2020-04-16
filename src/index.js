@@ -1,4 +1,5 @@
 import debounce from 'lodash.debounce';
+import PNotify from './js/pnotify';
 
 import searchRefs from './js/refs';
 import fetchCountries from './js/fetch-countries';
