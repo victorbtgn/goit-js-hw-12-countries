@@ -11,12 +11,12 @@ searchRefs.input.addEventListener('input', debounce(onTape, 500));
 
 function onTape(event) {
   event.preventDefault();
-  const value = event.target.value;
+  const searchQuery = event.target.value;
 
-  if (value.length === 0) {
+  if (searchQuery.length === 0) {
     searchRefs.list.innerHTML = '';
     return;
   }
 
-  fetchCountries(value).then(addMarkup);
+  fetchCountries(searchQuery).then(addMarkup);
 }
