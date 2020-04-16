@@ -2,11 +2,7 @@ import oneCountryTemplate from '../templates/one-country.hbs';
 import tenCountryTemplate from '../templates/ten-countries.hbs';
 import searchRefs from '../js/refs';
 
-import PNotify from 'pnotify/dist/es/PNotify.js';
-import PNotifyButtons from 'pnotify/dist/es/PNotifyButtons.js';
-import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
-PNotify.defaults.styling = 'material';
-PNotify.defaults.icons = 'material';
+import PNotify from './pnotify';
 
 const addMarkup = arr => {
   searchRefs.list.innerHTML = '';
@@ -28,8 +24,9 @@ const addMarkup = arr => {
   }
 
   if (arr.length > 10) {
-    PNotify.alert({
-      text: 'Too many matches found, enter a more specific query!',
+    PNotify.error({
+      title: 'Too many matches found.',
+      text: 'Enter a more specific query!',
     });
   }
 };
